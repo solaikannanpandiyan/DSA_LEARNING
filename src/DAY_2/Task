@@ -1,0 +1,17 @@
+Collection - Operations
+
+Try each and every methods to perform below operation using below 4 Collection:
+1) HashSet
+2) ArrayList
+3) LinkedList
+4) ArrayDeque - ( stack, queue )
+
+Operations:
+Create
+Add
+Read
+Update
+Delete
+Iteration
+Search
+Sort
