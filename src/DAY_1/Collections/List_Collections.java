@@ -38,7 +38,6 @@ public class List_Collections {
         System.out.println();
         System.out.println("READ");
         System.out.println(ls.get(0));
-        System.out.println(ls);
 
         // Update
         System.out.println();
@@ -53,7 +52,7 @@ public class List_Collections {
         System.out.println("DELETE");
         ls.remove(2);
         System.out.println(ls);
-        ls.remove(new Integer(1));
+//        ls.remove(new Integer(1));
         System.out.println(ls);
 
         // Iteration
@@ -87,8 +86,8 @@ public class List_Collections {
         System.out.println();
         System.out.println("SEARCH");
         System.out.println(ls.contains(20));
-        System.out.println(ls.indexOf(new Integer(20)));
-        System.out.println(ls.lastIndexOf(new Integer(20)));
+//        System.out.println(ls.indexOf(new Integer(20)));
+//        System.out.println(ls.lastIndexOf(new Integer(20)));
 
         // Sort
         System.out.println();

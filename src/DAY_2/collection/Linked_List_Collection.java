@@ -2,10 +2,16 @@ package DAY_2.collection;
 
 import java.util.*;
 
+class employee{
+    String name;
+    int age;
+    int salary;
+}
+
 public class Linked_List_Collection {
     public static void main(String[] args){
         // Create
-        LinkedList<Integer> ll = new LinkedList<>();
+        LinkedList<String> ll = new LinkedList<>();
 
         //ArrayList = child
         //List = parent
@@ -15,14 +21,16 @@ public class Linked_List_Collection {
         //add
         System.out.println();
         System.out.println("ADD");
-
+        ll.add("vimal");
         System.out.println(ll);
+        ll.add(0,"ajay");
 
         // Read
         System.out.println();
         System.out.println("READ");
-
-
+        System.out.println(ll.get(1));
+        System.out.println(ll.getFirst());
+        System.out.println(ll.getLast());
         System.out.println(ll);
 
         // Update
@@ -44,22 +52,22 @@ public class Linked_List_Collection {
         System.out.println();
         System.out.println("ITERATE");
 
-        for(int i :ll){
-            System.out.println(i);
-        }
-        System.out.println();
-
-        for(Integer i :ll){
-            System.out.println(i);
-        }
-        System.out.println();
-
-        for(int i = 0 ;i< ll.size();i++){
-            System.out.println(ll.get(i));
-        }
-        System.out.println();
-
-        Iterator<Integer> ix = ll.iterator();
+//        for(int i :ll){
+//            System.out.println(i);
+//        }
+//        System.out.println();
+//
+//        for(Integer i :ll){
+//            System.out.println(i);
+//        }
+//        System.out.println();
+//
+//        for(int i = 0 ;i< ll.size();i++){
+//            System.out.println(ll.get(i));
+//        }
+//        System.out.println();
+//
+        Iterator<String> ix = ll.iterator();
         while(ix.hasNext()) {
             System.out.println(ix.next());
         }

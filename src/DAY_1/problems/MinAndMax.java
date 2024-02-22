@@ -59,11 +59,7 @@ public class MinAndMax {
         int Max = Integer.MIN_VALUE;
 
         ArrayList<Integer> ax = new ArrayList<>();
-        ax.add(19);
-        ax.add(-3);
-        ax.add(7);
-        ax.add(23);
-        ax.add(5);
+        ax.add(Integer.MAX_VALUE);
         System.out.println(ax);
         Iterator<Integer> itx = ax.iterator();
         while(itx.hasNext()){
@@ -76,7 +72,7 @@ public class MinAndMax {
             }
         }
         System.out.println("MAX element: "+Max);
-        System.out.println("MAX element: "+Min);
+        System.out.println("MIN element: "+Min);
     }
 
     public static void main(String[] args){
