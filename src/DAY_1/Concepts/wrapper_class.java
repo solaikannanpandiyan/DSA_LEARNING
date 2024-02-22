@@ -1,4 +1,4 @@
-package DAY_1;
+package DAY_1.Concepts;
 
 public class wrapper_class {
     void boxing(){

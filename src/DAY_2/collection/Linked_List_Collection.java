@@ -1,25 +1,11 @@
-package DAY_1;
+package DAY_2.collection;
 
 import java.util.*;
 
-
-public class List_Collections {
-
-
+public class Linked_List_Collection {
     public static void main(String[] args){
-        //static
-//        int[] arr = new int[10];
-//        int[] arr1 = {1,2,3};
-
-        //dynamic
-        // ArrayList<Integer> ls = new ArrayList<Integer>();
-
         // Create
-        ArrayList<Integer> al = new ArrayList<Integer>();
-        List<Integer> ls = new ArrayList<>();
-        Collection<Integer> cl = new ArrayList<>();
-
-//        ls = new Vector<Integer>();
+        LinkedList<Integer> ll = new LinkedList<>();
 
         //ArrayList = child
         //List = parent
@@ -29,72 +15,70 @@ public class List_Collections {
         //add
         System.out.println();
         System.out.println("ADD");
-        ls.add(1);
-        ls.add(2);
-        ls.add(3);
-        System.out.println(ls);
+
+        System.out.println(ll);
 
         // Read
         System.out.println();
         System.out.println("READ");
-        System.out.println(ls.get(0));
-        System.out.println(ls);
+
+
+        System.out.println(ll);
 
         // Update
         System.out.println();
         System.out.println("UPDATE");
-        ls.set(1,20);
-        System.out.println(ls);
 
-        ls.add(2);
+
+        System.out.println(ll);
+
 
         // Delete
         System.out.println();
         System.out.println("DELETE");
-        ls.remove(2);
-        System.out.println(ls);
-        ls.remove(new Integer(1));
-        System.out.println(ls);
+
+
+        System.out.println(ll);
 
         // Iteration
         System.out.println();
         System.out.println("ITERATE");
-        ls.add(1);
-        ls.add(2);
-        for(int i :ls){
+
+        for(int i :ll){
             System.out.println(i);
         }
         System.out.println();
 
-        for(Integer i :ls){
+        for(Integer i :ll){
             System.out.println(i);
         }
         System.out.println();
 
-        for(int i = 0 ;i< ls.size();i++){
-            System.out.println(ls.get(i));
+        for(int i = 0 ;i< ll.size();i++){
+            System.out.println(ll.get(i));
         }
         System.out.println();
 
-        Iterator<Integer> ix = ls.iterator();
+        Iterator<Integer> ix = ll.iterator();
         while(ix.hasNext()) {
             System.out.println(ix.next());
         }
+        System.out.println(ll);
 
         //
 
         // Search
         System.out.println();
         System.out.println("SEARCH");
-        System.out.println(ls.contains(20));
-        System.out.println(ls.indexOf(new Integer(20)));
-        System.out.println(ls.lastIndexOf(new Integer(20)));
+
+        System.out.println(ll);
 
         // Sort
         System.out.println();
         System.out.println("SORT");
 
+        System.out.println(ll);
+
+
     }
-
-
 }
