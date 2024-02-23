@@ -1,0 +1,48 @@
+Collection - Operations
+Create
+Add
+Read
+Update
+Delete
+Iteration
+Search
+Sort
+
+Collections to be familiar with:
+HashSet
+ArrayList
+LinkedList
+ArrayDeque
+HashMap
+
+Collection to know about:
+TreeSet
+TreeMap
+
+
+General Note on Each collection:
+ARRAYLIST:
+Good for:
+Random access(index based)
+
+Bad for:
+Removing in the middle
+insertion
+
+LINKEDLIST OR ARRAYDEQUE:
+Good for:
+Removing in the middle
+insertion
+
+Bad for:
+Random access(index based)
+
+HASHSET:
+Good for:
+Contains (loop)
+removing duplicate
+finding common among both
+
+Bad for:
+Random access(index based)
+no ordering of information
