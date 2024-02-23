@@ -50,7 +50,7 @@ public class Rotate_array {
     public static void main(String[] args){
 //        ArrayList<Integer> arr = new ArrayList<>();
         LinkedList<Integer> arr = new LinkedList<>();
-        int rotate = 1000;
+        int rotate = 10000;
         for(int i =1;i<= 1000000;i++){
             arr.add(i);
         }
