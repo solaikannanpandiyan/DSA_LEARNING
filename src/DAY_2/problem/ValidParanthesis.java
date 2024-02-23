@@ -1,6 +1,7 @@
 package DAY_2.problem;
 
 import java.util.ArrayDeque;
+import java.util.HashMap;
 
 public class ValidParanthesis {
 //    find if a string is a valid parenthesis pattern
@@ -95,11 +96,52 @@ public class ValidParanthesis {
         System.out.println(stack);
     }
 
+    static void multiplesymbols_hashmap(String str){
+        // () {} []
+        // () [] {}
+        HashMap<Character,Character> hm = new HashMap<>();
+        hm.put('(',')');
+        hm.put('[',']');
+        hm.put('{','}');
+        ArrayDeque<Character> stack = new ArrayDeque<>();
+        for(int i = 0;i<str.length();i++){
+            char temp = str.charAt(i);
+            if(temp == '(' || temp == '[' || temp == '{'){
+                stack.push(temp);
+            }else{
+                // ) ] }
+                // ( == )
+                // [ == ]
+                // { == }
+                if(stack.isEmpty()){
+                    System.out.println("invalid");
+                    return;
+                }
+                if(hm.get(stack.peek()) != temp) {
+                    System.out.println("invalid");
+                    return;
+                }else{
+                    stack.pop();
+                }
+            }
+        }
+
+        if(stack.isEmpty()){
+            System.out.println("valid");
+        }else{
+            System.out.println("invalid");
+        }
+        System.out.println(stack);
+
+    }
+
+
+
     public static void main(String[] args) {
 //        String str = ")";
-        String str_multiple = "{[]}";
+        String str_multiple = "{[)]}";
 //        single_symbol(str);
-        multiplesymbols(str_multiple);
+        multiplesymbols_hashmap(str_multiple);
 
     }
 
