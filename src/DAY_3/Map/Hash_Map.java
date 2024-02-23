@@ -1,8 +1,6 @@
 package DAY_3.Map;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.*;
 
 class student extends Object{
     String name;
@@ -47,6 +45,57 @@ public class Hash_Map {
         System.out.println(s1.hashCode());
         System.out.println(s2.hashCode());
         System.out.println(s3.hashCode());
+
+//        Create
+        HashMap<String,Integer> hm = new HashMap<>();
+//        Add
+        System.out.println("ADD");
+        hm.put("ajay",3000);
+        hm.put("vimal",2500);
+        hm.put("kamal",2500);
+        System.out.println(hm);
+
+//        Read
+        System.out.println("READ");
+        System.out.println(hm.get("ajay"));
+        System.out.println(hm.get("vimal"));
+        System.out.println(hm.get("kamal"));
+
+        System.out.println(hm.entrySet());
+        System.out.println(hm.keySet());
+        System.out.println(hm.values());
+        System.out.println(hm);
+
+//        Update
+        System.out.println("UPDATE");
+        hm.put("ajay",30000);
+        hm.put("vimal",25000);
+        hm.put("kamal",25000);
+        System.out.println(hm);
+
+//        Delete
+        System.out.println("DELETE");
+        hm.remove("vimal");
+        System.out.println(hm);
+
+//        Iteration
+        System.out.println("Iterations");
+
+//        Iterator<Integer> itx = hm.values().iterator();
+//        while(itx.hasNext()){
+//            System.out.println(itx.next());
+//        }
+
+        for(String key : hm.keySet()){
+            System.out.println(hm.get(key));
+        }
+
+
+
+//        Search
+
+
+//        Sort
 
     }
 }
