@@ -4,9 +4,18 @@ import java.util.*;
 
 public class Missing_number {
 
+    static void usingArray(ArrayList<Integer> arr){
+
+    }
+
     static void usingNegativeMarker(ArrayList<Integer> arr){
         //assuming all are positive numbers
         //make all positive numbers
+        for(int i = 0; i < arr.size(); i++){
+            if(arr.get(i) < 0 ){
+                arr.set(i,arr.get(i)*-1);
+            }
+        }
         ArrayList<Integer> missing = new ArrayList<>();
         for(int i = 0; i < arr.size(); i++){
             int val = arr.get(i);
@@ -60,13 +69,23 @@ public class Missing_number {
         System.out.println(missed);
     }
     public static void main(String[] args){
-        List<Integer> input = Arrays.asList(4,2,8,3,1);
+        List<Integer> input = Arrays.asList(4,9,-6,3,1);
         ArrayList<Integer> arr = new ArrayList<>(input);
         usingSum(arr);
+        // time: O(N)
+        // space: O(1)
         usingSortOneMissingNo(arr);
+        // time: O(nLogn)
+        // space: O(1)
         usingHashSet(arr);
+        // time: O(N)
+        // space: O(N)
+        usingArray(arr);
+        // time: O(N)
+        // space: O(N)
         usingNegativeMarker(arr);
-
+        // space: O(1)
+        // time: O(N)
     }
 }
 
