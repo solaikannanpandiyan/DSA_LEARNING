@@ -19,6 +19,7 @@ public class TimeComplexities {
     static void function2(int k){
         // O(1)
         // no relation between no of repeation and input
+
         for(int i = 0; i< 10;i++){
             System.out.println(k);
         }
@@ -81,10 +82,61 @@ public class TimeComplexities {
         }
     }
 
+    static void function8(int x){
+        // time: O(n!)
+        // space: O(1)
+        //O(n!)
+        // 1 * 2 * 3 * 4 * 5 = 120
+
+        int count = 1;
+        // O(n)
+        for(int i = 1;i<=x;i++){
+           count = count * i; // 120
+        }
+
+        System.out.println(count);
+
+        // O(n!)
+        // count = n!
+        for(int i = 1;i<=count ;i++){
+            System.out.println(i);
+        }
+    }
+
+    static void function9(int x){
+        //time complexity: n * log(n)
+        int k = x;
+        int i = x;
+        // O(n)
+//        while(i>0){
+//            i = i-1;
+//            System.out.println(i);
+//        }
+
+        // O(logn)
+//        while(k>0){
+//            k = k/2;
+//            System.out.println(k);
+//        }
+
+        //O(nlogn)
+        //O(4*2) = 8
+        while(i>0){
+            while(k>1){
+                System.out.println(x);
+                k = k/2;
+            }
+            i = i-1;
+            k = x;
+        }
+
+
+    }
+
 
 
     public static void main(String[] args){
-        function7(1000);
+        function9(4);
 //        1024 = 10;
 //        1024 -> 2048; -> 10
     }
