@@ -1,0 +1,4 @@
+Try to implement dynamic stack.
+hint: use scale function to create array two times
+the size of stack and move all elements into the new array
+call the scale function everytime half of stack gets filled
