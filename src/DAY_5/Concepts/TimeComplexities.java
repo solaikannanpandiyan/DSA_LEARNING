@@ -1,4 +1,4 @@
-package DAY_5.Problems;
+package DAY_5.Concepts;
 
 public class TimeComplexities {
 
