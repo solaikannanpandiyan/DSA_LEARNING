@@ -1,8 +1,16 @@
-TASK 1: Try to implement dynamic stack.
+TASKS:
+1) Try to implement dynamic stack.
 hint: use scale function to create array two times
 the size of stack and move all elements into the new array
 call the scale function everytime half of stack gets filled
------------------------------------------------------------
-Find if a string is palindrome using created custom char stack.
 
-implement a reverse method in stack that reverses all elements in the stack
+2) Try to implement dynamic QUEUE.
+    hint: use scale function to create array two times
+    the size of stack and move all elements into the new array
+    call the scale function everytime half of stack gets filled
+
+
+3)implement a reverse method in stack that reverses all elements in the stack
+-----------------------------------------------------------
+
+
