@@ -133,10 +133,31 @@ public class TimeComplexities {
 
     }
 
+    static void function10(int x){
+        //time complexity: n * log(n)
+
+        //O(n^2)
+        int count = 1;
+//        for(int i = 0;i<x;i++){
+//            for(int k = 0; k<x/2; k++){
+//                System.out.println(count++);
+//            }
+//        }
+
+//        for(int i = 0;i<x;i++){
+//
+//            for(int k = x; k>1; k=k/2){
+//                System.out.println(count++);
+//            }
+//        }
+
+
+    }
+
 
 
     public static void main(String[] args){
-        function9(4);
+        function10(8);
 //        1024 = 10;
 //        1024 -> 2048; -> 10
     }
