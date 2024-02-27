@@ -1,0 +1,12 @@
+LinkedList:
+1) int[] array to singlylinkedlist
+
+2) int[] array to doublylinkedlist
+
+3) reverse a linked list
+a) using recursion
+b) using loop iteration
+
+4) find the middle of a singly linked list
+
+5) find if a linked list is looped.

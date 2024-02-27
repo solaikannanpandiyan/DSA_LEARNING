@@ -91,4 +91,27 @@ Find common between two Arraylist
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Find if a string is palindrome using created custom char stack  - using custom stack
 
+Home work:
+reverse polish notation - using
+https://leetcode.com/problems/evaluate-reverse-polish-notation/?envType=study-plan-v2&envId=top-interview-150
+
+
+reverse invidual works of a sentence using stack.
+(a word is completed if a empty space is encountered)
+
+balance paranthesis - using custom stack - hashmap for equal
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+LinkedList:
+1) int[] array to singlylinkedlist
+
+2) int[] array to doublylinkedlist
+
+3) reverse a linked list
+a) using recursion
+b) using loop iteration
+
+4) find the middle of a singly linked list
+
+5) find if a linked list is looped.
