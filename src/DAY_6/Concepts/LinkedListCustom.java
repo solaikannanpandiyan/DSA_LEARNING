@@ -4,15 +4,6 @@ package DAY_6.Concepts;
 import java.util.Arrays;
 
 
-class employee{
-//    String name;
-    int age;
-//    String dept;
-    int experience;
-    int salary;
-
-}
-
 class LinkedListNode{
 
     int data;
