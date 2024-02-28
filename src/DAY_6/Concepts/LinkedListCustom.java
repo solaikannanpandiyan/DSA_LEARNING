@@ -51,6 +51,7 @@ public class LinkedListCustom {
         int[] x = {1,5,7,9};
         System.out.println(Arrays.toString(x));
         LinkedListNode node4 = new LinkedListNode(9,null);
+
 //        LinkedListNode node3 = new LinkedListNode(7,node4);
 //        LinkedListNode node2 = new LinkedListNode(5,node3);
 //        LinkedListNode node = new LinkedListNode(1,node2);
@@ -59,7 +60,9 @@ public class LinkedListCustom {
 //            System.out.println(node.data);
 //            node = node.next;
 //        }
+
         LinkedListNode head = createSinglyLinkedListForward(x);
+
         for(LinkedListNode temp = head;temp!=null;temp = temp.next){
             System.out.println(temp.data);
         }

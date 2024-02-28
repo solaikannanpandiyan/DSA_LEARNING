@@ -8,9 +8,9 @@ class LinkedListNode{
 
     int data;
 
-    LinkedListNode next;
+    Node next;
 
-    public LinkedListNode(int data, LinkedListNode next) {
+    public LinkedListNode(int data, Node next) {
         this.data = data;
         this.next = next;
         this.id = this.hashCode();
@@ -28,23 +28,23 @@ class LinkedListNode{
 }
 
 public class LL_REVERSE {
-    static LinkedListNode createSinglyLinkedListBackward(int[] input){
-        LinkedListNode head = null;
-        LinkedListNode future = null;
+    static Node createSinglyLinkedListBackward(int[] input){
+        Node head = null;
+        Node future = null;
         for(int i = input.length-1;i>=0;i--){
-            head = new LinkedListNode(input[i],future);
+            head = new Node(input[i],future);
             future = head;
         }
 
         return head;
     }
 
-    static LinkedListNode createSinglyLinkedListForward(int[] input){
-        LinkedListNode past = null;
-        LinkedListNode tail = null;
-        LinkedListNode head = null;
+    static Node createSinglyLinkedListForward(int[] input){
+        Node past = null;
+        Node tail = null;
+        Node head = null;
         for (int j : input) {
-            tail = new LinkedListNode(j, null);
+            tail = new Node(j, null);
             if (past == null) { // will be true only once or first time
                 head = tail;
                 past = tail;
@@ -57,20 +57,19 @@ public class LL_REVERSE {
         return head;
     }
 
-    static void printNode(LinkedListNode node){
-        for(LinkedListNode temp = node; temp!=null; temp = temp.next){
+    static void printNode(Node node){
+        for(Node temp = node; temp!=null; temp = temp.next){
             System.out.println(temp);
         }
     }
 
-    static LinkedListNode reverse(LinkedListNode head ){
+    static Node reverse(Node head ){
         if(head == null){
             return head;
         }
-        LinkedListNode temp = head.next;
-        LinkedListNode curr = head;
-        LinkedListNode prev = null;
-
+        Node temp = head.next;
+        Node curr = head;
+        Node prev = null;
 
         while(curr!=null){
             curr.next = prev;
@@ -99,14 +98,14 @@ public class LL_REVERSE {
 //            System.out.println(node.data);
 //            node = node.next;
 //        }
-        LinkedListNode head = createSinglyLinkedListBackward(x);
+        Node head = createSinglyLinkedListBackward(x);
         System.out.println("BEFORE REVERSING");
-        for(LinkedListNode temp = head; temp!=null; temp = temp.next){
+        for(Node temp = head; temp!=null; temp = temp.next){
             System.out.println(temp);
         }
-        LinkedListNode curr = reverse(head);
+        Node curr = reverse(head);
         System.out.println("REVERSED ");
-        for(LinkedListNode temp = curr; temp!=null; temp = temp.next){
+        for(Node temp = curr; temp!=null; temp = temp.next){
             System.out.println(temp);
         }
 
