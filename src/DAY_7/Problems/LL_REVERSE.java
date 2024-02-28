@@ -1,32 +1,6 @@
 package DAY_7.Problems;
 import java.util.Arrays;
 
-
-class LinkedListNode{
-
-    private int id;
-
-    int data;
-
-    Node next;
-
-    public LinkedListNode(int data, Node next) {
-        this.data = data;
-        this.next = next;
-        this.id = this.hashCode();
-    }
-
-
-    @Override
-    public String toString() {
-        return "LinkedListNode{" +
-                "id=" + id +
-                ", data=" + data +
-                ", next=" + next +
-                '}';
-    }
-}
-
 public class LL_REVERSE {
     static Node createSinglyLinkedListBackward(int[] input){
         Node head = null;
@@ -59,7 +33,11 @@ public class LL_REVERSE {
 
     static void printNode(Node node){
         for(Node temp = node; temp!=null; temp = temp.next){
-            System.out.println(temp);
+            System.out.println("LinkedListNode{" +
+                    "id=" + temp.getId() +
+                    ", data=" + temp.data +
+                    ", next=" + temp.next +
+                    '}');
         }
     }
 

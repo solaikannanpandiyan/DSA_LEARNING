@@ -3,31 +3,6 @@ package DAY_7.Problems;
 
 import java.lang.reflect.Array;
 
-class Node {
-
-    private int id;
-
-    int data;
-
-    Node next;
-
-    public Node(int data, Node next) {
-        this.data = data;
-        this.next = next;
-        this.id = this.hashCode();
-    }
-
-
-    @Override
-    public String toString() {
-        return "LinkedListNode{" +
-                "id=" + id +
-                ", data=" + data +
-                ", next=" + next +
-                '}';
-    }
-}
-
 
 public class CircularLinkedList {
     static Node createSinglyLinkedListBackward(int[] input){
