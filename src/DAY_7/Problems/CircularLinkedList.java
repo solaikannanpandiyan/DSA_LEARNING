@@ -59,17 +59,46 @@ public class CircularLinkedList {
         Node tail = temp;
         tail.next = head;
 
-        // iteration
+        // insert 9 after the node with value 5
+        temp = head;
+        do{
+            if(temp.data == 5){
+                Node next = temp.next;
+                temp.next = new Node(9,next);
+            }
+            temp = temp.next;
+        }while(temp != head);
+
+//         iteration
+        System.out.println("INSERTION");
         temp = head;
         do{
             System.out.println(temp.data);
             temp = temp.next;
         }while(temp != head);
 
-        // insert 9 after the node with value 5
-
-
-        // delete node with value 5
+        // remove node with value 5
+        temp = head;
+        Node prev = null;
+        Node removedNode = null;
+        do{
+            if(temp.data == 5){
+                prev.next = temp.next;
+                temp.next = null;
+                removedNode = temp;
+                temp = prev.next;
+//                break;
+            }
+            prev = temp;
+            temp = temp.next;
+        }while(temp != head);
+        System.out.println("REMOVED");
+        System.out.println("REMOVE NODE:"+ removedNode);
+        temp = head;
+        do{
+            System.out.println(temp.data);
+            temp = temp.next;
+        }while(temp != head);
 
 
 

@@ -30,6 +30,8 @@ slow - 1 jump
 time: O(N)
 space: O(1)
 
+
+https://leetcode.com/problems/reverse-linked-list/
 4) reverse a linked list
 a) using recursion
 time:
@@ -43,7 +45,7 @@ c) using stack // use collection
 time:
 space:
 
-
-5) find if a linked list is looped.
+https://leetcode.com/problems/linked-list-cycle/
+5) find if a linked list is looped or contains cycles.
 time:
 space:
