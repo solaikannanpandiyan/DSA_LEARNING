@@ -115,3 +115,38 @@ b) using loop iteration
 4) find the middle of a singly linked list
 
 5) find if a linked list is looped.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+LINKED LIST -
+1) FINDING A GIVEN VALUE IN A LINKED LIST
+2) REMOVING DUPLICATES - HASHSET
+3) FINDING MIDDLE ELEMENT USING FAST AND SLOW
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+RECURSION:
+1) print n "open" and n "closed" printed using recursion
+open 1
+open 2
+open 3
+open 4
+open 5
+closed 5
+closed 4
+closed 3
+closed 2
+closed 1
+2) ITERATING LINKED LIST
+1 -> 2 -> 5 -> 4 -> 3
+1
+2
+3
+4
+5
+3) FIBONACCI SERIES
+0
+1
+1
+2
+3
+4
+7
