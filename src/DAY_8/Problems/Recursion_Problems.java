@@ -69,9 +69,14 @@ public class Recursion_Problems {
         return prev + beforeprev;
     }
 
-    static Node reverse(Node head){
-
-
+    static Node reverse(Node prev, Node head){
+        if(head == null){
+            return prev;
+        }
+        Node temp = head.next;
+        head.next = prev;
+        prev = head;
+        return reverse(prev, temp);
     }
 
     static int fibIter(int x) {
@@ -105,11 +110,23 @@ public class Recursion_Problems {
 //        1) Operation: delete (prev node)
 //        2) Terminal case: after we reach the required node
 //        3) function call: (curr,next)
-        int target = 10;
+//        int target = 10;
+//        System.out.println("BEFORE");
+//        printNodeChain(head);
+//        deleteNode(null,head,target);
+//        System.out.println("AFTER");
+//        printNodeChain(head);
+
+//        REVERSING A LINKED LIST
+//        1) Operation: (curr , prev) && temp = next && prev = curr
+//        2) Terminal case: reach null
+//        3) function call: (curr , prev)
+
         System.out.println("BEFORE");
         printNodeChain(head);
-        deleteNode(null,head,target);
+        Node ReversedHead = reverse(null,head);
         System.out.println("AFTER");
-        printNodeChain(head);
+        printNodeChain(ReversedHead);
+
     }
 }
