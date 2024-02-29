@@ -69,6 +69,11 @@ public class Recursion_Problems {
         return prev + beforeprev;
     }
 
+    static Node reverse(Node head){
+
+
+    }
+
     static int fibIter(int x) {
         if(x<=2){
             return x -1;
@@ -82,6 +87,8 @@ public class Recursion_Problems {
         }
         return x2;
     }
+
+
 
     public static void main(String[] args){
         int[] arr = {1,10,5,45,6};
