@@ -1,7 +1,6 @@
 package DAY_7.Problems;
 
-
-class Node{
+public class Node{
 
     public int getId() {
         return id;
@@ -9,9 +8,9 @@ class Node{
 
     private int id;
 
-    int data;
+    public int data;
 
-    Node next;
+    public Node next;
 
     public Node(int data, Node next) {
         this.data = data;
