@@ -1,0 +1,20 @@
+RECURSION:
+
+NUMBER:
+1) find factorial using of a number using recursion
+2) find sum of n number using recursion
+
+LINKED LIST:
+1 -> 10 -> 5 -> 45 -> 6 -> null
+1) Delete a linked list node with value 10 using recursion
+1 -> 5 -> 45 -> 6 -> null
+
+2) Insert a linked list node with value 20 after a node with value 5
+1 -> 10 -> 5 -> 20  -> 45 -> 6 -> null
+
+3) Print alternative element in a linked list
+1 -> 10 -> 5 -> 45 -> 6 -> null
+print: 1 5 6
+print: 10 45 null
+
+4) Revese a linked list using Recursion
