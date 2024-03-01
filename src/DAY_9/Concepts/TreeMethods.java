@@ -23,8 +23,8 @@ public class TreeMethods {
     static void printTreeNodeChain(TreeNode node){
         if(node == null)
             return;
-        printOneTreeNode(node);
         printTreeNodeChain(node.left);
+        printOneTreeNode(node);
         printTreeNodeChain(node.right);
     }
 
