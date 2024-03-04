@@ -29,6 +29,29 @@ public class TreeMethods {
         printTreeNodeChain(node.right);
     }
 
+    static void printTreeNodeChainInorder(TreeNode node){
+        if(node == null) // termination or end condition
+            return;
+        printTreeNodeChain(node.left); // recursive function call
+        printOneTreeNode(node); // operation
+        printTreeNodeChain(node.right); // recursive function call
+    }
+
+    static void printTreeNodeChainPreorder(TreeNode node){
+        if(node == null)
+            return;
+        printOneTreeNode(node);
+        printTreeNodeChain(node.left);
+        printTreeNodeChain(node.right);
+    }
+
+    static void printTreeNodeChainPostorder(TreeNode node){
+        if(node == null)
+            return;
+        printTreeNodeChain(node.left);
+        printTreeNodeChain(node.right);
+        printOneTreeNode(node);
+    }
 
     public static TreeNode Create(int i){
         if(i>=arr.length) // end condition
@@ -40,7 +63,7 @@ public class TreeMethods {
 
         // operation
         TreeNode res = new TreeNode(arr[i], left,right);
-        printOneTreeNode(res);
+//        printOneTreeNode(res);
         return res;
     }
 
@@ -66,6 +89,8 @@ public class TreeMethods {
 
         return hm.get(0);
     }
+
+
 
     public static void main(String[] args){
 //        Approaches:
@@ -93,9 +118,18 @@ public class TreeMethods {
 //        4) queque
 
 
-
+        //Traversal
+        //Recursive approach - function call stack as ds
         TreeNode head = Create(0);
-//        printTreeNodeChain(head);
+        System.out.println("IN ORDER");
+        printTreeNodeChainInorder(head);
+        System.out.println("PRE ORDER");
+        printTreeNodeChainPreorder(head);
+        System.out.println("POST ORDER");
+        printTreeNodeChainPostorder(head);
+
+        //Iterative approach - use our collection stack as ds
+
 
 
     }
