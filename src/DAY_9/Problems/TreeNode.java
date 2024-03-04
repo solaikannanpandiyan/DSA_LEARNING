@@ -22,7 +22,7 @@ public class TreeNode {
     @Override
     public String toString() {
         String leftValue = this.left==null?"null": String.valueOf(this.left.hashCode());
-        String rightValue = this.left==null?"null": String.valueOf(this.right.hashCode());
+        String rightValue = this.right==null?"null": String.valueOf(this.right.hashCode());
         return "LinkedListNode{" +
                 "id=" + this.getId() +
                 ", data=" + this.data +

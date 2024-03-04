@@ -11,7 +11,7 @@ public class TreeMethods {
 
     static void printOneTreeNode(TreeNode temp){
         String leftValue = temp.left==null?"null": String.valueOf(temp.left.hashCode());
-        String rightValue = temp.left==null?"null": String.valueOf(temp.right.hashCode());
+        String rightValue = temp.right==null?"null": String.valueOf(temp.right.hashCode());
         System.out.println("LinkedListNode{" +
                 "id=" + temp.getId() +
                 ", data=" + temp.data +
@@ -19,6 +19,7 @@ public class TreeMethods {
                 ", right=" + rightValue +
                 '}');
     }
+
 
     static void printTreeNodeChain(TreeNode node){
         if(node == null)
@@ -30,15 +31,24 @@ public class TreeMethods {
 
 
     public static TreeNode Create(int i){
-        if(i>=arr.length)
+        if(i>=arr.length) // end condition
             return null;
-        return new TreeNode(arr[i], Create((2*i)+1), Create((2*i)+2));
+
+        //recursive function call
+        TreeNode left = Create((2*i)+1);
+        TreeNode right = Create((2*i)+2);
+
+        // operation
+        TreeNode res = new TreeNode(arr[i], left,right);
+        printOneTreeNode(res);
+        return res;
     }
 
     public static TreeNode CreateNodeHashMap(){
         // TIME : O(N)
         // SPACE: O(N)
         HashMap<Integer,TreeNode> hm = new HashMap<Integer,TreeNode>();
+
         if(arr.length == 0)
             return null;
 
@@ -61,27 +71,30 @@ public class TreeMethods {
 //        Approaches:
 //        1) static generate each node and connect
 //        1) Create a Tree
-//        input: [1 , 2 , 3, 4, 5, 6, 7]
-//                   1
-//                /    \
-//               2      3
-//              / \    / \
-//             4   5  6   7
+//        input: [1 , 2 , 3, 4, 5, 6, 7,null,null,null,15]
+//        index: [0,  1 , 2, 3, 4, 5, 6, 7,   8,  9,   10]
+//                    1
+//                 /     \
+//               2        3
+//              / \      / \
+//             4   5    6   7
+//
 
 //        TreeNode left = new TreeNode(6,null,null);
 //        TreeNode right = new TreeNode(7,null,null);
-//        TreeNode parent = new TreeNode(7,left,right);
+//        TreeNode parent = new TreeNode(3,left,right);
 
 //        2) hash map
-        TreeNode head =  CreateNodeHashMap();
-        printTreeNodeChain(head);
+//        TreeNode head =  CreateNodeHashMap();
+//        printTreeNodeChain(head);
 
 //        3) recursion
+
 //        4) queque
 
 
 
-//        TreeNode head = Create(0);
+        TreeNode head = Create(0);
 //        printTreeNodeChain(head);
 
 
