@@ -4,6 +4,7 @@ import DAY_7.Problems.Node;
 import DAY_9.Problems.TreeNode;
 import com.sun.source.tree.Tree;
 
+import java.util.ArrayDeque;
 import java.util.HashMap;
 
 public class TreeMethods {
@@ -51,6 +52,32 @@ public class TreeMethods {
         printTreeNodeChain(node.left);
         printTreeNodeChain(node.right);
         printOneTreeNode(node);
+    }
+
+    static void printTreeNodeChainIterativePreorder(TreeNode node){
+//        if(node == null)
+//            return;
+//        printOneTreeNode(node);
+//        printTreeNodeChain(node.left);
+//        printTreeNodeChain(node.right);
+
+        if(node == null){
+            System.out.println("The tree has not nodes");
+        }
+
+        ArrayDeque<TreeNode> stack = new ArrayDeque<>();
+        stack.add(node);
+        while(!stack.isEmpty()){
+            TreeNode head = stack.pop();
+
+            //operation
+            System.out.println(head);
+
+            if(head.right!=null) stack.push(head.right);
+            if(head.left!=null) stack.push(head.left);
+        }
+
+
     }
 
     public static TreeNode Create(int i){
@@ -129,7 +156,12 @@ public class TreeMethods {
         printTreeNodeChainPostorder(head);
 
         //Iterative approach - use our collection stack as ds
-
+        System.out.println("IN ORDER");
+        printTreeNodeChainIterativePreorder(head);
+//        System.out.println("PRE ORDER");
+//        printTreeNodeChainPreorder(head);
+//        System.out.println("POST ORDER");
+//        printTreeNodeChainPostorder(head);
 
 
     }
