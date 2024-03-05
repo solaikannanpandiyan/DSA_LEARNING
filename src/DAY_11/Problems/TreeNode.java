@@ -19,6 +19,13 @@ public class TreeNode {
         this.right = right;
     }
 
+    public TreeNode(int data) {
+        this.id = this.hashCode();
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+
     @Override
     public String toString() {
         String leftValue = this.left==null?"null": String.valueOf(this.left.hashCode());

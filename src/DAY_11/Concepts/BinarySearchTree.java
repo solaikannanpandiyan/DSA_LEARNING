@@ -1,6 +1,9 @@
 package DAY_11.Concepts;
 
 import DAY_11.Problems.TreeNode;
+import com.sun.source.tree.Tree;
+
+import java.util.Arrays;
 
 public class BinarySearchTree {
 
@@ -30,18 +33,61 @@ public class BinarySearchTree {
     }
 
     static boolean isBinarySearchTree(TreeNode head){
+        if(head == null)
+            return true;
 
+        if(head.left != null){
+            if(head.left.data > head.data){
+                return false;
+            }
+        }
+        if(head.right != null){
+            if(head.right.data < head.data){
+                return false;
+            }
+        }
 
-        return true;
+        return isBinarySearchTree(head.left) && isBinarySearchTree(head.right);
+    }
+
+    public static TreeNode CreateBinarySearchTree(int[] arr,int start,int end){
+        if(start>end)
+            return null;
+        int mid = (start + end) / 2;
+        TreeNode newNode = new TreeNode(arr[mid]);
+        newNode.left = CreateBinarySearchTree(arr,start,mid-1);
+        newNode.right =CreateBinarySearchTree(arr,mid+1,end) ;
+        return newNode;
+    }
+
+    static void printTreeNodeChainInorder(TreeNode node){
+        if(node == null) // termination or end condition
+            return;
+        printTreeNodeChainInorder(node.left); // recursive function call
+        printOneTreeNode(node); // operation
+        printTreeNodeChainInorder(node.right); // recursive function call
     }
 
     public static void main(String[] args){
-        int[] arr1 = {4,3,6,1,2,5,7};
+        int[] arr1 = {4,2,6,1,3,5,7};
         int[] arr2 = {1,2,3,4,5,6,7};
-        TreeNode Head1 = Create(0,arr1);
-        TreeNode Head2 = Create(0,arr2);
-        System.out.println(isBinarySearchTree(Head1));
-        System.out.println(isBinarySearchTree(Head2));
+//        TreeNode Head1 = Create(0,arr1);
+//        TreeNode Head2 = Create(0,arr2);
+//        System.out.println(isBinarySearchTree(Head1));
+//        System.out.println(isBinarySearchTree(Head2));
+
+        // input
+        int[] arr3 = {7,3,2,1,5,4,6};
+        System.out.println(Arrays.toString(arr3));
+        Arrays.sort(arr3);
+//      {7,3,2,1,5,4,6};
+//        Array:
+//      {1,  2,  3,  4,  5,  6,  7};
+//        Index:
+//      {0,  1,  2,  3,  4,  5,  6};
+        System.out.println(Arrays.toString(arr3));
+        TreeNode head = CreateBinarySearchTree(arr3,0,arr3.length-1);
+        printTreeNodeChainInorder(head);
     }
 
 }
