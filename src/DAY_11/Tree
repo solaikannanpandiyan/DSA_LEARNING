@@ -1,0 +1,23 @@
+TreeNode{
+    int data;
+    TreeNode left;
+    TreeNode right;
+}
+1) Create a Tree
+input: [1 , 2 , 3, 4, 5, 6, 7]
+         1
+      /    \
+     2      3
+    / \    / \
+   4   5  6   7
+
+2) Try following:
+IN ORDER TRAVERSAL - using recursion,iteration - stack
+PRE ORDER TRAVERSAL - using recursion,iteration - stack
+POST ORDER TRAVERSAL - using recursion,iteration - stack
+LEVEL ORDER TRAVERSAL - using recursion,iteration - stack,queue
+
+3) Operations on Binary Tree:
+a) Insertion
+b) Deletion
+c) Updation
