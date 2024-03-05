@@ -117,6 +117,20 @@ public class TreeInsertDelete {
 
     public static TreeNode FindTreeNode(int target,TreeNode node){
         // find the tree node which has the given target value
+        if(node == null)
+            return null;
+
+        if(node.data == target)
+            return node;
+
+        TreeNode left_side = FindTreeNode(target,node.left);
+        if(left_side !=  null)
+            return left_side;
+
+        TreeNode right_side = FindTreeNode(target,node.right);
+        if(right_side != null)
+            return right_side;
+
         return null;
     }
 
@@ -178,8 +192,10 @@ public class TreeInsertDelete {
         printTreeNodeChainIterativePreorder(head);
 
         //Iterative approach - use our collection stack as ds
-
-
+        System.out.println("FINDING NODE IN BINARY TREE");
+        TreeNode node = FindTreeNode(3,head);
+        if(node!= null)
+            printOneTreeNode(node);
 
 //        System.out.println("PRE ORDER");
 //        printTreeNodeChainPreorder(head);
