@@ -1,6 +1,7 @@
 package DAY_11.Concepts;
 
 import DAY_11.Problems.TreeNode;
+import DAY_7.Problems.Node;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;
@@ -140,12 +141,40 @@ public class TreeInsertDelete {
         return null;
     }
 
-    public static boolean RemoveTargetNode(){
+    public static void InsertingANewData(){
+        //inserting new data as a node into the tree
+
+    }
+
+    public static boolean RemoveTargetNode(TreeNode head, TreeNode target){
         // remove the target node from tree
-        return true;
+        if(head == null)
+            return false;
+
+        if(head.left == target){
+            head.left = null;
+            return true;}
+
+        if(head.right == target){
+            head.right = null;
+            return true;}
+
+        boolean left = RemoveTargetNode(head.left,target);
+        if(left)
+            return true;
+
+        boolean right = RemoveTargetNode(head.right,target);
+        if(right)
+            return true;
+
+        return false;
     }
 
     public static boolean DeleteData(TreeNode head,int target){
+        // finding the node with target element to delete - using find target node function
+        // swapping the data of the found node with data of last children element - using find last children function
+        // removing the relationship of the last children node from the the tree - using Remove function
+
 
         return true;
     }
@@ -193,9 +222,19 @@ public class TreeInsertDelete {
 
         //Iterative approach - use our collection stack as ds
         System.out.println("FINDING NODE IN BINARY TREE");
-        TreeNode node = FindTreeNode(3,head);
+        TreeNode node = FindTreeNode(7,head);
         if(node!= null)
             printOneTreeNode(node);
+
+        boolean removalStatus = RemoveTargetNode(head,node);
+        System.out.println("REMOVAL STATUS: "+ removalStatus);
+        System.out.println("PRINT AFTER REMOVAL");
+        printTreeNodeChainInorder(head);
+
+        removalStatus = RemoveTargetNode(head,node);
+        System.out.println("REMOVAL STATUS: "+ removalStatus);
+        System.out.println("PRINT AFTER REMOVAL");
+        printTreeNodeChainInorder(head);
 
 //        System.out.println("PRE ORDER");
 //        printTreeNodeChainPreorder(head);
