@@ -137,9 +137,18 @@ public class TreeInsertDelete {
 
     public static TreeNode FindLastChildrenNode(TreeNode node){
         // find the last children node to swap and delete
-
-        return null;
+        ArrayDeque<TreeNode> queue = new ArrayDeque<>();
+        TreeNode curr = null;
+        if(node == null) return curr;
+        queue.add(node);
+        while(!queue.isEmpty()){
+            curr = queue.removeFirst();
+            if(curr.left != null) queue.add(curr.left);
+            if(curr.right != null) queue.add(curr.right);
+        }
+        return curr;
     }
+
 
     public static void InsertingANewData(){
         //inserting new data as a node into the tree
@@ -174,9 +183,26 @@ public class TreeInsertDelete {
         // finding the node with target element to delete - using find target node function
         // swapping the data of the found node with data of last children element - using find last children function
         // removing the relationship of the last children node from the the tree - using Remove function
+        System.out.println("FIND LAST CHILDREN");
+        TreeNode last = FindLastChildrenNode(head);
+        printOneTreeNode(last);
+
+        System.out.println("FINDING NODE IN BINARY TREE");
+        TreeNode node = FindTreeNode(target,head);
+        if(node!= null)
+            printOneTreeNode(node);
+
+        //simple swap
+        int temp = last.data;
+        last.data = node.data;
+        node.data = temp;
+
+        boolean removalStatus = RemoveTargetNode(head,last);
+        System.out.println("REMOVAL STATUS: "+ removalStatus);
+        System.out.println("PRINT AFTER REMOVAL");
 
 
-        return true;
+        return removalStatus;
     }
 
 
@@ -220,27 +246,19 @@ public class TreeInsertDelete {
         System.out.println("IN ORDER");
         printTreeNodeChainIterativePreorder(head);
 
-        //Iterative approach - use our collection stack as ds
-        System.out.println("FINDING NODE IN BINARY TREE");
-        TreeNode node = FindTreeNode(7,head);
-        if(node!= null)
-            printOneTreeNode(node);
-
-        boolean removalStatus = RemoveTargetNode(head,node);
-        System.out.println("REMOVAL STATUS: "+ removalStatus);
-        System.out.println("PRINT AFTER REMOVAL");
-        printTreeNodeChainInorder(head);
-
-        removalStatus = RemoveTargetNode(head,node);
-        System.out.println("REMOVAL STATUS: "+ removalStatus);
-        System.out.println("PRINT AFTER REMOVAL");
-        printTreeNodeChainInorder(head);
-
-//        System.out.println("PRE ORDER");
+        //        System.out.println("PRE ORDER");
 //        printTreeNodeChainPreorder(head);
 //        System.out.println("POST ORDER");
 //        printTreeNodeChainPostorder(head);
 
+        //Iterative approach - use our collection stack as ds
+        // try for yourself
+
+        System.out.println("BEFORE DELETE");
+        printTreeNodeChainPreorder(head);
+        DeleteData(head,1);
+        System.out.println("AFTER DELETE");
+        printTreeNodeChainPreorder(head);
 
     }
 }
