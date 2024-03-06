@@ -1,12 +1,16 @@
 package DAY_12.Concepts;
 
 import DAY_12.Problems.TreeNode;
+import com.sun.source.tree.Tree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
 public class BinarySearchTree {
+
+    static int index = 0;
+    static int[] output;
 
     static void printOneTreeNode(TreeNode temp){
         String leftValue = temp.left==null?"null": String.valueOf(temp.left.hashCode());
@@ -69,17 +73,52 @@ public class BinarySearchTree {
         printTreeNodeChainInorder(node.right); // recursive function call
     }
 
-    public static TreeNode balance(TreeNode unBalancedHead){
-        // convert to an Arraylist
+    public static int count(TreeNode th){
+//        operation
+//        *terminal condition
+//        recusive function call
+        if(th == null)
+            return 0;
 
-        // sort the Arraylist
+        int currrentcount = 1;
+        int left = count(th.left);
+        int right = count(th.right);
+        return currrentcount + left + right;
+//        return 1 + count(th.left) + count(th.right);
+    }
+
+    public static void preOrderToArray(TreeNode head){
+        if(head == null)
+            return ;
+        //operation
+        output[index++] = head.data;
+
+        preOrderToArray(head.left);
+        preOrderToArray(head.right);
+    }
+
+    public static TreeNode balance(TreeNode unBalancedHead){
+        int cnt = count(unBalancedHead);
+        System.out.println("COUNT : " + cnt);
+
+        // convert to an array
+        output = new int[cnt];
+        System.out.println(Arrays.toString(output));
+        preOrderToArray(unBalancedHead);
+        System.out.println(Arrays.toString(output));
+
+        // sort the array
+        Arrays.sort(output);
+        System.out.println("Sorted Array: " + Arrays.toString(output));
 //        ArrayList<Integer> arr = new ArrayList<>();
 //        arr.sort(Comparator.naturalOrder());
 
         // convert sorted arrray to balanced binary search tree
+        TreeNode bstHead = CreateBinarySearchTree(output,0,output.length-1);
 
+        printTreeNodeChainInorder(bstHead);
         //return null
-        return null;
+        return bstHead;
     }
 
 
@@ -101,8 +140,9 @@ public class BinarySearchTree {
 //        Index:
 //      {0,  1,  2,  3,  4,  5,  6};
         System.out.println(Arrays.toString(arr3));
-        TreeNode head = CreateBinarySearchTree(arr3,0,arr3.length-1);
+        TreeNode head = CreateBinarySearchTree(arr2,0,arr2.length-1);
         printTreeNodeChainInorder(head);
+        balance(head);
     }
 
 }
