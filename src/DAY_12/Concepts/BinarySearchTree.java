@@ -190,6 +190,7 @@ public class BinarySearchTree {
         head = balance(head);
 //        System.out.println(isContains(head,0));
         System.out.println(heightOfBst(head));
+
     }
 
 }
