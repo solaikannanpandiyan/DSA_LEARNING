@@ -138,6 +138,19 @@ public class BinarySearchTree {
             return isContains(head.right,target);
     }
 
+    public static boolean isContainsPreorder(TreeNode head,int target){
+        //time complexity: O(log n ) or O(n) right: O(n)
+        //space complexity: O(N) or O(log n) right O(log n)
+
+        if(head == null){
+            return false;
+        }
+        if(head.data == target){
+            return true;
+        }
+        return isContainsPreorder(head.left,target) || isContainsPreorder(head.right,target);
+    }
+
 
     public static void main(String[] args){
         int[] arr1 = {4,2,6,1,3,5,7};
