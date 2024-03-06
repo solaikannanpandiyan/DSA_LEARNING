@@ -166,6 +166,31 @@ public class BinarySearchTree {
         return 1 + Math.max(heightOfBst(Head.left),heightOfBst(Head.right));
     }
 
+    public static void insertInBst(TreeNode head,int target){
+        if(head == null)
+           return;
+
+        if(target < head.data){
+            if(head.left != null)
+                insertInBst(head.left,target);
+            else
+                head.left = new TreeNode(target);
+        }else{
+            if(head.right != null)
+                insertInBst(head.right,target);
+            else
+                head.right = new TreeNode(target);
+        }
+    }
+
+    public static boolean insert(TreeNode head, int target){
+        if(isContains(head,target)) {
+            System.out.println("already exists");
+            return false;
+        }
+        insertInBst(head,target);
+        return true;
+    }
 
     public static void main(String[] args){
         int[] arr1 = {4,2,6,1,3,5,7};
@@ -176,7 +201,7 @@ public class BinarySearchTree {
 //        System.out.println(isBinarySearchTree(Head2));
 
         // input
-        int[] arr3 = {7,3,2,1,5,4,6};
+        int[] arr3 = {7,3,2,1,5,4,6,10,9};
         System.out.println(Arrays.toString(arr3));
         Arrays.sort(arr3);
 //      {7,3,2,1,5,4,6};
@@ -185,11 +210,13 @@ public class BinarySearchTree {
 //        Index:
 //      {0,  1,  2,  3,  4,  5,  6};
         System.out.println(Arrays.toString(arr3));
-        TreeNode head = CreateBinarySearchTree(arr2,0,arr2.length-1);
+        TreeNode head = CreateBinarySearchTree(arr3,0,arr3.length-1);
         printTreeNodeChainInorder(head);
-        head = balance(head);
+//        head = balance(head);
 //        System.out.println(isContains(head,0));
         System.out.println(heightOfBst(head));
+        insertInBst(head,8);
+        printTreeNodeChainInorder(head);
 
     }
 
