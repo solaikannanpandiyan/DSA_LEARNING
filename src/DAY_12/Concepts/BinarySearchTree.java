@@ -148,7 +148,22 @@ public class BinarySearchTree {
         if(head.data == target){
             return true;
         }
-        return isContainsPreorder(head.left,target) || isContainsPreorder(head.right,target);
+        return false || isContainsPreorder(head.left,target) || isContainsPreorder(head.right,target);
+    }
+
+    public static int heightOfBst(TreeNode Head){
+        if(Head == null)
+            return 0;
+
+        //to not consider leaf nodes.
+        if ((Head.left == null) && (Head.right == null))
+            return 0;
+//        int left = heightOfBst(Head.left);
+//        int right = heightOfBst(Head.right);
+//        int maxHeight = Math.max(left,right);
+//        int currHeight = 1;
+//        return currHeight + maxHeight;
+        return 1 + Math.max(heightOfBst(Head.left),heightOfBst(Head.right));
     }
 
 
@@ -173,7 +188,8 @@ public class BinarySearchTree {
         TreeNode head = CreateBinarySearchTree(arr2,0,arr2.length-1);
         printTreeNodeChainInorder(head);
         head = balance(head);
-        System.out.println(isContains(head,0));
+//        System.out.println(isContains(head,0));
+        System.out.println(heightOfBst(head));
     }
 
 }
