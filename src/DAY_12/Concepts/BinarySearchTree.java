@@ -121,6 +121,23 @@ public class BinarySearchTree {
         return bstHead;
     }
 
+    public static boolean isContains(TreeNode head,int target){
+        //search for target in given bst
+        //return true if present
+        //return false if not present
+        // time complexity: O(logn)
+        // space complexity: O(logn)
+        // iterative
+        if(head == null)
+            return false;
+        if(head.data == target)
+            return true;
+        if(target < head.data)
+            return isContains(head.left,target);
+        else
+            return isContains(head.right,target);
+    }
+
 
     public static void main(String[] args){
         int[] arr1 = {4,2,6,1,3,5,7};
@@ -142,7 +159,8 @@ public class BinarySearchTree {
         System.out.println(Arrays.toString(arr3));
         TreeNode head = CreateBinarySearchTree(arr2,0,arr2.length-1);
         printTreeNodeChainInorder(head);
-        balance(head);
+        head = balance(head);
+        System.out.println(isContains(head,0));
     }
 
 }
