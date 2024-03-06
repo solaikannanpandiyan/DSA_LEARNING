@@ -1,0 +1,26 @@
+TreeNode{
+    int data;
+    TreeNode left;
+    TreeNode right;
+}
+
+1) Create a Balanced Binary Search Tree
+input: [1 , 2 , 3, 4, 5, 6, 7]
+hieght = [-1 , 0, 1]
+         4
+      /    \
+     2      6
+    / \    / \
+   1   3  5   7
+
+3) Operations on Binary Search Tree:
+a) Creation *
+b) Insertion
+c) Deletion
+d) Updation
+c) Searching or finding a element
+
+Problems:
+1) Counting nodes in BST
+2) height of BST - Recursion and iteration
+
